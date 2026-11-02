@@ -1,0 +1,111 @@
+     A*%%TS  SD  20240627  134805  SUBUKARU    REL-V7R4M0  5770-WDS
+     A*%%EC
+     A                                      DSPSIZ(27 132 *DS4)
+     A                                      REF(*LIBL/CDAUTP)
+     A                                      INDARA
+     A                                      CF03(03)
+     A                                      CF04(04)
+     A                                      CF05(05)
+     A                                      CF12(12)
+     A                                      PAGEDOWN(25)
+     A                                      PAGEUP(26)
+     A* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+     A          R HEADER1
+     A*%%TS  SD  20240627  134805  SUBUKARU    REL-V7R4M0  5770-WDS
+     A                                      KEEP
+     A                                  1 60'AWS CardDemo'
+     A                                      COLOR(WHT)
+     A                                  2 54'Authorization Main Screen'
+     A                                      DSPATR(RI)
+     A                                  1124DATE
+     A                                      EDTCDE(Y)
+     A                                  2124TIME
+     A                                      EDTWRD('0  :  :  ')
+     A                                  2  2USER
+     A            PGMNAME       10A  O  1  2COLOR(BLU)
+     A* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+     A          R HEADER2
+     A*%%TS  SD  20240627  134805  SUBUKARU    REL-V7R4M0  5770-WDS
+     A                                      OVERLAY
+     A                                  4  2'Authorization ID (lesser'
+     A                                      COLOR(YLW)
+     A                                  4 27'than or equal):'
+     A                                      COLOR(YLW)
+     A                                  6  2'Authorization ID'
+     A                                      DSPATR(UL)
+     A                                      COLOR(BLU)
+     A                                  6 22'Transaction ID'
+     A                                      DSPATR(UL)
+     A                                      COLOR(BLU)
+     A                                  6 39'Credit Card Number'
+     A                                      DSPATR(UL)
+     A                                      COLOR(BLU)
+     A                                  6 60'Response Reason'
+     A                                      DSPATR(UL)
+     A                                      COLOR(BLU)
+     A                                  6 92'Fraud Flag'
+     A                                      DSPATR(UL)
+     A                                      COLOR(BLU)
+     A                                  6104'Auth Date'
+     A                                      DSPATR(UL)
+     A                                      COLOR(BLU)
+     A                                  6116'Auth Time'
+     A                                      DSPATR(UL)
+     A                                      COLOR(BLU)
+     A            POSITION      18S 0B  4 43COLOR(WHT)
+     A* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+     A          R SFL1                      SFL
+     A*%%TS  SD  20240627  134805  SUBUKARU    REL-V7R4M0  5770-WDS
+     A            AUTHID    R        O  7  2
+     A            TRNID     R        O  7 22COLOR(PNK)
+     A            CARDNUM   R        O  7 39COLOR(PNK)
+     A                                      EDTWRD('    -    -    -    ')
+     A            RSPREASON R        O  7 60
+     A            FRAUDFLAG R        O  7 96
+     A            AUTHDATE  R        O  7104
+     A            AUTHTIME  R        O  7116
+     A* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+     A          R CTL1                      SFLCTL(SFL1)
+     A*%%TS  SD  20240627  134805  SUBUKARU    REL-V7R4M0  5770-WDS
+     A                                      SFLSIZ(0016)
+     A                                      SFLPAG(0016)
+     A                                      OVERLAY
+     A                                      SFLDSPCTL
+     A N30                                  SFLDSP
+     A  30                                  SFLCLR
+     A  31                                  SFLINZ
+     A  33                                  SFLEND
+     A                                      CSRLOC(ROW COL)
+     A                                      RTNCSRLOC(&CSRREC &CSRFLD &CSRPOS)
+     A            ROW            3S 0H
+     A            COL            3S 0H
+     A            CSRREC        10A  H
+     A            CSRFLD        10A  H
+     A            CSRPOS         4S 0H
+     A            SFLRRN         4S 0H
+     A* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+     A          R FOOTER
+     A                                      OVERLAY
+     A            DASHES       130A    24  2
+     A                                      COLOR(WHT)
+     A                                 25  2'F3=Exit' COLOR(BLU)
+     A                                 25 14'F5=Refresh' COLOR(BLU)
+     A                                 25 29'F12=Cancel' COLOR(BLU)
+     A* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+     A          R MSGSFL                    SFL
+     A                                      SFLMSGRCD(27)
+     A            SFLMSGKEY                 SFLMSGKEY
+     A            PGMQ                      SFLPGMQ
+     A          R MSGSFLC                   SFLCTL(MSGSFL)
+     A                                      OVERLAY
+     A                                      SFLSIZ(2)
+     A                                      SFLPAG(1)
+     A                                      SFLDSP
+     A                                      SFLDSPCTL
+     A                                      SFLINZ
+     A            PGMQ                      SFLPGMQ
+     A* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+     A          R EMPTY
+     A                                      OVERLAY
+     A                                  8  2'No records to display'
+     A                                      COLOR(RED)

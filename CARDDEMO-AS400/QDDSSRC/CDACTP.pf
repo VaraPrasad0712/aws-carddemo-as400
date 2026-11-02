@@ -1,0 +1,30 @@
+
+**********************************************************************
+      * File Name       : CDACTP (PF)
+      * Author          : Subu
+      * Date            : 02/11/2024
+      * Description     : Account Master
+**********************************************************************
+
+     A          R CDACTPR
+     A            ACCTNUM       12  0       TEXT('ACCOUNT NUMBER')
+     A            ACTIVE         1A         TEXT('ACCOUNT ACTIVE STATUS')
+     A            OPENDATE        L         TEXT('OPEN DATE')
+     A            EXPIRYDATE      L         TEXT('EXPIRY DATE')
+     A            CREDLIMIT      9  2       TEXT('CREDIT LIMIT')
+     A            CASHLIMIT      9  2       TEXT('CASH LIMIT')
+     A            BALANCE        9  2       TEXT('ACCOUNT BALANCE')
+     A            CURCREDIT      9  2       TEXT('CURRENT CREDIT')
+     A            CURDEBIT       9  2       TEXT('CURRENT DEBIT')
+     A            ACCTGRP       10A         TEXT('ACCOUNT GROUP')
+     A            PRICUSTID      9  0       TEXT('PRIMARY CUSTOMER ID')
+     A            SECCUSTID      9  0       TEXT('SECONDARY CUSTOMER ID')
+     A            ACTCRTDT       7  0       TEXT('CCM ADD DATE')
+     A            ACTCRTTM       6  0       TEXT('CCM ADD TIME')
+     A            ACTCRTUSR     10A         TEXT('CCM ADD USER')
+     A            ACTCRTPGM     10A         TEXT('CCM ADD PROGRAM')
+     A            ACTCHGDT       7  0       TEXT('CCM CHANGE DATE')
+     A            ACTCHGTM       6  0       TEXT('CCM CHANGE DATE')
+     A            ACTCHGUSR     10A         TEXT('CCM CHANGE USER')
+     A            ACTCHGPGM     10A         TEXT('CCM CHANGE PROGRAM')
+

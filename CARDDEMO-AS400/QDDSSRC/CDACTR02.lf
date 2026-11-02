@@ -1,0 +1,12 @@
+
+**********************************************************************
+      * File Name       : CDACTR02 (LF)
+      * Author          : Jon Keeney
+      * Date            : 04/23/2024
+      * Description     : Account Master - Key by Primary Customer ID
+**********************************************************************
+
+     A
+     A          R CDACTPR                   PFILE(CDACTP)
+     A          K PRICUSTID
+

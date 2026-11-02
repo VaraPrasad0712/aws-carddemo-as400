@@ -1,0 +1,13 @@
+
+**********************************************************************
+      * File Name       : CDCCMR02 (LF)
+      * Author          : Subu
+      * Date            : 06/02/2024
+      * Description     : Credit Card Master - Key Cust/Acc, Omit 'D' sts
+**********************************************************************
+
+     A          R CDCCMPR                   PFILE(CDCCMP)
+     A          K CUSTID
+     A          K ACCTNUM
+     A          O STATUS                    COMP(EQ 'D')
+

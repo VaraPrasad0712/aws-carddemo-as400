@@ -1,0 +1,173 @@
+     A*%%TS  SD  20240705  182603  SUBU        REL-V7R4M0  5770-WDS
+     A*%%EC
+     A                                      DSPSIZ(24 80 *DS3)
+     A                                      INDARA
+     A                                      CA03(03)
+     A                                      CF05(05)
+     A                                      CF06(06)
+     A                                      CF12(12)
+     A                                      ROLLUP(25)
+     A                                      ROLLDOWN(26)
+     A                                      VLDCMDKEY(50)
+     A* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+     A          R HEADER1
+     A                                      KEEP
+     A                                  1 35'AWS CardDemo'
+     A                                      COLOR(WHT)
+     A                                  2 29'Credit Card Main Screen'
+     A                                      DSPATR(RI)
+     A                                  1 72DATE EDTCDE(Y)
+     A                                  2 72TIME EDTWRD('0  :  :  ')
+     A                                  2  2USER
+     A            PGMNAME       10A     1  2COLOR(BLU)
+     A* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+     A          R HEADER2
+     A                                       OVERLAY
+     A                                  4  2'Select Options:' COLOR(BLU)
+     A                                  4 19'2=Edit' COLOR(BLU)
+     A                                  4 27'4=Deactivate' COLOR(BLU)
+     A                                  4 41'5=Display' COLOR(BLU)
+     A                                  4 52'7=Status' COLOR(BLU)
+     A                                  4 62'9=Activity History' COLOR(BLU)
+     A                                  7  2'?' DSPATR(UL)
+     A                                      COLOR(BLU)
+     A                                  7  5'Credit Card Number' DSPATR(UL)
+     A                                      COLOR(BLU)
+     A                                  7 26'Customer ID' DSPATR(UL)
+     A                                      COLOR(BLU)
+     A                                  7 39'Account Number' DSPATR(UL)
+     A                                      COLOR(BLU)
+     A                                  7 55'Prim/Sec' DSPATR(UL)
+     A                                      COLOR(BLU)
+     A                                  7 65'Status' DSPATR(UL)
+     A                                      COLOR(BLU)
+     A            POSITION      19A  B  5  5COLOR(WHT)
+     A  81                                  DSPATR(PC)
+     A  81                                  DSPATR(RI)
+     A* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+     A          R SFL1                      SFL
+     A            OPTION         1A  B  8  2
+     A                                      VALUES('2' '4' '5' '7' '9')
+     A                                      CHKMSGID(ERR0001 CDMSGF01)
+     A                                      CHECK(AB)
+     A            CARDNUM       16  0   8  5EDTWRD('    -    -    -    ')
+     A            CUSTID         9A     8 26
+     A            ACCTNUM       12A     8 39
+     A            PRIMARYSEC     1A     8 58
+     A            STATUS         1A     8 67
+     A* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+     A          R CTL1                      SFLCTL(SFL1)
+     A                                      OVERLAY
+     A                                      SFLPAG(13)
+     A                                      SFLSIZ(13)
+     A                                      SFLDSPCTL
+     A N30                                  SFLDSP
+     A  30                                  SFLCLR
+     A  31                                  SFLINZ
+     A  33                                  SFLEND
+     A                                      CSRLOC(ROW COL)
+     A            ROW            3S 0H
+     A            COL            3S 0H
+     A            SFLRRN         4S 0H      SFLRCDNBR(CURSOR)
+     A* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+     A          R FOOTER
+     A                                      OVERLAY
+     A                                 21  2'-----------------------------------
+     A                                      ------------------------------------
+     A                                      ---------'
+     A                                      COLOR(WHT)
+     A                                 22 11'F3=Exit' COLOR(BLU)
+     A                                 22 20'F5=Refresh' COLOR(BLU)
+     A                                 22 32'F6=Add' COLOR(BLU)
+     A                                 22 40'F12=Cancel' COLOR(BLU)
+     A* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+     A          R DELWIN
+     A*%%TS  SD  20240705  182603  SUBU        REL-V7R4M0  5770-WDS
+     A                                      WINDOW(4 2 15 74)
+     A                                      WDWBORDER((*COLOR RED))
+     A                                      WDWTITLE((*TEXT 'Deactivate Card') +
+     A                                      (*COLOR GRN) (*DSPATR RI))
+     A                                  3  5'Credit Card Number:'
+     A            CARDNUM       16Y 0O  3 25COLOR(WHT)
+     A                                      EDTWRD('    -    -    -    ')
+     A                                  3 50'Current Status:'
+     A            STATUS         1A  O  3 66COLOR(WHT)
+     A                                  5  5'Customer ID:'
+     A            CUSTID         9A  O  5 18COLOR(WHT)
+     A                                  5 35'Account Number:'
+     A            ACCTNUM       12A  O  5 51COLOR(WHT)
+     A                                  7  5'Are you sure you want'
+     A                                      COLOR(RED)
+     A                                  7 27'to deactivate this'
+     A                                      COLOR(RED)
+     A                                  7 46'credit card?'
+     A                                      COLOR(RED)
+     A                                  9 19'Enter = Confirm Yes'
+     A                                      COLOR(BLU)
+     A                                  9 43'F12 = Cancel'
+     A                                      COLOR(BLU)
+     A* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+     A          R DELERRWIN
+     A*%%TS  SD  20240705  182603  SUBU        REL-V7R4M0  5770-WDS
+     A                                      WINDOW(4 2 15 74)
+     A                                      WDWBORDER((*COLOR RED) (*DSPATR RI))
+     A                                      WDWTITLE((*TEXT 'Deactivate Card') +
+     A                                      (*COLOR GRN) (*DSPATR RI))
+     A                                  3  5'Credit Card Number:'
+     A            CARDNUM       16Y 0O  3 25COLOR(WHT)
+     A                                      EDTWRD('    -    -    -    ')
+     A                                  3 50'Current Status:'
+     A            STATUS         1A  O  3 66COLOR(WHT)
+     A                                  5  5'Customer ID:'
+     A            CUSTID         9A  O  5 18COLOR(WHT)
+     A                                  5 35'Account Number:'
+     A            ACCTNUM       12A  O  5 51COLOR(WHT)
+     A                                  9  5'Press any valid function key'
+     A                                      COLOR(BLU)
+     A                                  9 34'or enter to continue...'
+     A                                      COLOR(BLU)
+     A            ERRDELW       50A  O  7  5MSGID(ERR 0068 CDMSGF01)
+     A                                      COLOR(RED)
+     A                                      DSPATR(BL)
+     A* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+     A          R STATUSWIN
+     A                                      WINDOW(4 2 15 74)
+     A                                      WDWBORDER((*COLOR BLU))
+     A                                      WDWTITLE((*TEXT 'Update Card Status+
+     A                                      ') (*COLOR GRN) (*DSPATR RI))
+     A                                  3  5'Credit Card Number:'
+     A            CARDNUM       16  0   3 25 COLOR(WHT)
+     A                                       EDTWRD('    -    -    -    ')
+     A                                  3 50'Current Status:'
+     A            STATUS         1A     3 66 COLOR(WHT)
+     A                                  5  5'Customer ID:'
+     A            CUSTID         9A     5 18 COLOR(WHT)
+     A                                  5 35'Account Number:'
+     A            ACCTNUM       12A     5 51 COLOR(WHT)
+     A                                  9  5'Are you sure you want' COLOR(RED)
+     A                                  9 27'to change this' COLOR(RED)
+     A                                  9 42'card status?' COLOR(RED)
+     A                                 11 19'Enter = Confirm Yes'
+     A                                      COLOR(BLU)
+     A                                 11 43'F12 = Cancel' COLOR(BLU)
+     A                                  7  5'New Status:' COLOR(BLU)
+     A            UPDATETYPE    20A  O  7 17 COLOR(WHT)
+     A* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+     A          R MSGSFL                    SFL
+     A                                      SFLMSGRCD(24)
+     A            SFLMSGKEY                 SFLMSGKEY
+     A            PGMQ                      SFLPGMQ
+     A          R MSGSFLC                   SFLCTL(MSGSFL)
+     A                                      OVERLAY
+     A                                      SFLSIZ(1)
+     A                                      SFLPAG(1)
+     A                                      SFLDSP
+     A                                      SFLDSPCTL
+     A                                      SFLINZ
+     A            PGMQ                      SFLPGMQ
+     A* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+     A          R EMPTY
+     A*%%TS  SD  20240616  150209  SUBUKARU    REL-V7R4M0  5770-WDS
+     A                                      OVERLAY
+     A                                  9  5'No records to display'
+     A                                      COLOR(RED)

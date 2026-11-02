@@ -1,0 +1,14 @@
+
+**********************************************************************
+      * File Name       : CDUSRR02 (LF)
+      * Author          : Subu
+      * Date            : 04/18/2024
+      * Description     : User Master - Select Active Status Only
+**********************************************************************
+
+     A                                      UNIQUE
+     A          R CDUSRPR                   PFILE(CDUSRP)
+     A          K USERID
+     A          K TYPE
+     A          S STATUS                    COMP(EQ 'A')
+

@@ -1,0 +1,12 @@
+
+**********************************************************************
+      * File Name       : CDCUSU01 (LF)
+      * Author          : Subu
+      * Date            : 02/11/2024
+      * Description     : Customer Master - Update Index
+**********************************************************************
+
+     A                                      UNIQUE
+     A          R CDCUSPR                   PFILE(CDCUSP)
+     A          K CUSTID
+

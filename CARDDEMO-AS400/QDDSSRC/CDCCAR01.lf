@@ -1,0 +1,13 @@
+
+**********************************************************************
+      * File Name       : CDCCAR01 (LF)
+      * Author          : Subu
+      * Date            : 02/11/2024
+      * Description     : Credit Card Activity - Key by Card Number &
+      *                 : Seq Number
+   *******************************************************************
+
+     A          R CDCCAPR                   PFILE(CDCCAP)
+     A          K CARDNUM
+     A          K CCASEQNO
+

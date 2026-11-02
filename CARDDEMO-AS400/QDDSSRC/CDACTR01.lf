@@ -1,0 +1,12 @@
+
+**********************************************************************
+      * File Name       : CDACTR01 (LF)
+      * Author          : Subu
+      * Date            : 02/11/2024
+      * Description     : Account Master - Key by Account Number
+**********************************************************************
+
+     A
+     A          R CDACTPR                   PFILE(CDACTP)
+     A          K ACCTNUM
+

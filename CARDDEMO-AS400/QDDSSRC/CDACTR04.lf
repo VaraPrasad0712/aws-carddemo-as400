@@ -1,0 +1,13 @@
+
+**********************************************************************
+      * File Name       : CDACTR04 (LF)
+      * Author          : Subu
+      * Date            : 06/05/2024
+      * Description     : Account Master - Key by Account Number & Sts
+**********************************************************************
+
+     A
+     A          R CDACTPR                   PFILE(CDACTP)
+     A          K ACTIVE
+     A          K ACCTNUM
+

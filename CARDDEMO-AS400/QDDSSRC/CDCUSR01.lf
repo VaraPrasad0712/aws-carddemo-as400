@@ -1,0 +1,12 @@
+
+**********************************************************************
+      * File Name       : CDCUSR01 (LF)
+      * Author          : Subu
+      * Date            : 02/11/2024
+      * Description     : Customer Master - Key by Customer ID
+**********************************************************************
+
+     A
+     A          R CDCUSPR                   PFILE(CDCUSP)
+     A          K CUSTID
+

@@ -1,0 +1,11 @@
+
+**********************************************************************
+      * File Name       : CDCCMR01 (LF)
+      * Author          : Subu
+      * Date            : 02/11/2024
+      * Description     : Credit Card Master - Key by Card Number
+**********************************************************************
+
+     A          R CDCCMPR                   PFILE(CDCCMP)
+     A          K CARDNUM
+

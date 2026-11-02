@@ -1,0 +1,153 @@
+     A*%%TS  SD  20240706  100318  SUBUKARU    REL-V7R4M0  5770-WDS
+     A*%%EC
+     A                                      DSPSIZ(24 80 *DS3)
+     A                                      INDARA
+     A                                      CF01(01)
+     A                                      CF02(02)
+     A                                      CA03(03)
+     A                                      CF04(04)
+     A                                      CF05(05)
+     A                                      CF06(06)
+     A                                      CF07(07)
+     A                                      CF08(08)
+     A                                      CF09(09)
+     A                                      CF10(10)
+     A                                      CF11(11)
+     A                                      CF12(12)
+     A                                      CF13(13)
+     A                                      CF14(14)
+     A                                      CF15(15)
+     A                                      CF16(16)
+     A                                      CF17(17)
+     A                                      CF18(18)
+     A                                      CF19(19)
+     A                                      CF20(20)
+     A                                      CF21(21)
+     A                                      CF22(22)
+     A                                      CF23(23)
+     A                                      CF24(24)
+     A                                      VLDCMDKEY(50)
+     A*-----------------------------------------------------------------------
+     A          R SCRN1
+     A*%%TS  SD  20240706  100318  SUBUKARU    REL-V7R4M0  5770-WDS
+     A                                      OVERLAY
+     A                                      RTNCSRLOC(&CSRREC &CSRFLD &CSRPOS)
+     A            CSRREC        10A  H
+     A            CSRFLD        10A  H
+     A            CSRPOS         4S 0H
+     A                                  1 35'AWS Card Demo'
+     A                                      COLOR(WHT)
+     A N70N80                           2 35'Edit Account'
+     A                                      DSPATR(RI)
+     A  70N80                           2 36'Add Account'
+     A                                      DSPATR(RI)
+     A  80                              2 35'View Account'
+     A                                      DSPATR(RI)
+     A                                  1 70DATE
+     A                                      EDTCDE(Y)
+     A                                  2 70TIME
+     A                                      EDTWRD('0  :  :  ')
+     A                                  2  2USER
+     A            PGMNAME       10A  O  1  2COLOR(BLU)
+     A                                 22  2'F3=Exit'
+     A                                      COLOR(BLU)
+     A                                 22 11'F12=Cancel'
+     A                                      COLOR(BLU)
+     A                                  4  4'Account Number        :'
+     A            ACCTNUM       12A  B  4 29COLOR(WHT)
+     A N70                                  DSPATR(PR)
+     A  70N80                               DSPATR(UL)
+     A  81                                  DSPATR(PC)
+     A  81                                  DSPATR(RI)
+     A                                  5  4'Opened                :'
+     A            OPENDATE      10L  O  5 29COLOR(WHT)
+     A                                  6  4'Expiry                :'
+     A            EXPIRYDATE    10L  B  6 29COLOR(WHT)
+     A  70
+     AO 80                                  DSPATR(PR)
+     A N70N80                               DSPATR(UL)
+     A  92                                  DSPATR(PC)
+     A  92                                  DSPATR(RI)
+     A                                  8  4'Primary Customer ID   :'
+     A            PRICUSTID      9A  B  8 29
+     A N70                                  DSPATR(PR)
+     A  70N80                               DSPATR(UL)
+     A  51                                  DSPATR(PC)
+     A  88                                  DSPATR(RI)
+     A                                      COLOR(PNK)
+     A                                  9  4'Secondary Customer ID :'
+     A            SECCUSTID      9A  B  9 29COLOR(PNK)
+     A  72                                  DSPATR(PR)
+     A N72                                  DSPATR(UL)
+     A  52                                  DSPATR(PC)
+     A  89                                  DSPATR(RI)
+     A                                 10  4'Account Group         :'
+     A            ACCTGRP       15A  B 10 29COLOR(WHT)
+     A  80                                  DSPATR(PR)
+     A N80                                  DSPATR(UL)
+     A  82                                  DSPATR(PC)
+     A  82                                  DSPATR(RI)
+     A                                 12  4'Credit Limit          :'
+     A            CREDLIMIT     10A  B 12 29COLOR(WHT)
+     A  80                                  DSPATR(PR)
+     A N80                                  DSPATR(UL)
+     A  83                                  DSPATR(PC)
+     A  83                                  DSPATR(RI)
+     A                                 13  4'Cash Credit Limit     :'
+     A            CASHLIMIT     10A  B 13 29COLOR(WHT)
+     A  80                                  DSPATR(PR)
+     A N80                                  DSPATR(UL)
+     A  84                                  DSPATR(PC)
+     A  84                                  DSPATR(RI)
+     A N70                             15  4'Current Balance       :'
+     A            BALANCE       10A  O 15 29COLOR(WHT)
+     A N70                             16  4'Current Cycle Credit  :'
+     A            CURCREDIT     10A  O 16 29COLOR(WHT)
+     A N70                             17  4'Current Cycle Debit   :'
+     A            CURDEBIT      10A  O 17 29COLOR(WHT)
+     A N70                             19  4'Created By:'
+     A N70        ACTCRTUSR     10A  O 19 16COLOR(WHT)
+     A N70                             19 29'On:'
+     A N70        ACTCRTDT       8Y 0O 19 33EDTWRD('    -  -  ')
+     A                                      COLOR(WHT)
+     A N70        ACTCRTTM       6Y 0O 19 44EDTWRD('0  :  :  ')
+     A                                      COLOR(WHT)
+     A N70                             19 55'Program:'
+     A N70        ACTCRTPGM     10A  O 19 64COLOR(WHT)
+     A N70                             20  4'Updated By:'
+     A N70        ACTCHGUSR     10A  O 20 16COLOR(WHT)
+     A N70                             20 29'On:'
+     A N70        ACTCHGDT       8Y 0O 20 33EDTWRD('    -  -  ')
+     A                                      COLOR(WHT)
+     A N70        ACTCHGTM       6Y 0O 20 44EDTWRD('0  :  :  ')
+     A                                      COLOR(WHT)
+     A N70                             20 55'Program:'
+     A N70        ACTCHGPGM     10A  O 20 64COLOR(WHT)
+     A                                  6 48'Account Status :'
+     A  70                                  DSPATR(ND)
+     A            STATUS         8A  O  6 65
+     A  70                                  DSPATR(ND)
+     A  71                                  COLOR(RED)
+     A N71                                  COLOR(WHT)
+     A* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+     A          R CONFIRM
+     A                                      WINDOW(5 45 9 20)
+     A                                      WDWBORDER((*COLOR BLU) (*DSPATR RI))
+     A  70                              2  2'Add Account' COLOR(WHT)
+     A N70N80                           2  2'Update Account' COLOR(WHT)
+     A                                  4  2'Are you sure?'
+     A                                  6  2'Enter = Confirm' COLOR(BLU)
+     A                                  7  2'F12 = Cancel' COLOR(BLU)
+     A* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+     A          R MSGSFL                    SFL
+     A                                      SFLMSGRCD(24)
+     A            SFLMSGKEY                 SFLMSGKEY
+     A            PGMQ                      SFLPGMQ
+     A          R MSGSFLC                   SFLCTL(MSGSFL)
+     A                                      OVERLAY
+     A                                      SFLSIZ(1)
+     A                                      SFLPAG(1)
+     A                                      SFLDSP
+     A                                      SFLDSPCTL
+     A                                      SFLINZ
+     A            PGMQ                      SFLPGMQ

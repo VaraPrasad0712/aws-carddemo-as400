@@ -1,0 +1,90 @@
+     A*%%TS  SD  20240706  095300  SUBUKARU    REL-V7R4M0  5770-WDS
+     A*%%EC
+     A                                      DSPSIZ(24 80 *DS3)
+     A                                      INDARA
+     A* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+     A          R HEADER1
+     A*%%TS  SD  20240702  235245  SUBUKARU    REL-V7R4M0  5770-WDS
+     A                                      KEEP
+     A                                  1 35'AWS CardDemo'
+     A                                      COLOR(WHT)
+     A                                  1 72DATE
+     A                                      EDTCDE(Y)
+     A                                  2 72TIME
+     A                                      EDTWRD('0  :  :  ')
+     A                                  2  2USER
+     A            PGMNAME       10A  O  1  2COLOR(BLU)
+     A                                  2 34'Select Customer'
+     A                                      DSPATR(RI)
+     A* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+     A          R HEADER2
+     A*%%TS  SD  20240706  095300  SUBUKARU    REL-V7R4M0  5770-WDS
+     A                                      OVERLAY
+     A                                  4  2'Select Options:'
+     A                                      COLOR(BLU)
+     A                                  4 19'X=Select'
+     A                                      COLOR(BLU)
+     A                                  7  2'?'
+     A                                      DSPATR(UL)
+     A                                      COLOR(BLU)
+     A                                  7  5'Customer ID'
+     A                                      DSPATR(UL)
+     A                                      COLOR(BLU)
+     A                                  7 18'First Name'
+     A                                      DSPATR(UL)
+     A                                      COLOR(BLU)
+     A                                  7 45'Last Name'
+     A                                      DSPATR(UL)
+     A                                      COLOR(BLU)
+     A            POSITION       9S 0B  5  5COLOR(WHT)
+     A* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+     A          R SFL1                      SFL
+     A*%%TS  SD  20240703  001524  SUBUKARU    REL-V7R4M0  5770-WDS
+     A            OPTION         1A  B  8  2CHECK(AB)
+     A                                      VALUES('X')
+     A                                      CHKMSGID(ERR0001 *LIBL/CDMSGF01)
+     A            CUSTID         9A  O  8  5
+     A            FIRSTNAME     25A  O  8 18
+     A            LASTNAME      25A  O  8 45
+     A* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+     A          R CTL1                      SFLCTL(SFL1)
+     A*%%TS  SD  20240703  000348  SUBUKARU    REL-V7R4M0  5770-WDS
+     A                                      CA03(03 'Exit')
+     A                                      CA05(05 'Refresh')
+     A                                      CA12(12 'Previous')
+     A                                      OVERLAY
+     A  30                                  SFLDSP
+     A  31                                  SFLDSPCTL
+     A  32                                  SFLCLR
+     A  33                                  SFLEND
+     A                                      SFLSIZ(9999)
+     A                                      SFLPAG(0013)
+     A* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+     A          R FOOTER
+     A                                      OVERLAY
+     A                                 21  2'-----------------------------------
+     A                                      ------------------------------------
+     A                                      ---------'
+     A                                      COLOR(WHT)
+     A                                 22  2'F3=Exit' COLOR(BLU)
+     A                                 22 11'F5=Refresh' COLOR(BLU)
+     A                                 22 23'F12=Cancel' COLOR(BLU)
+     A* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+     A          R MSGSFL                    SFL
+     A                                      SFLMSGRCD(24)
+     A            SFLMSGKEY                 SFLMSGKEY
+     A            PGMQ                      SFLPGMQ
+     A          R MSGSFLC                   SFLCTL(MSGSFL)
+     A                                      OVERLAY
+     A                                      SFLSIZ(1)
+     A                                      SFLPAG(1)
+     A                                      SFLDSP
+     A                                      SFLDSPCTL
+     A                                      SFLINZ
+     A            PGMQ                      SFLPGMQ
+     A* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+     A          R EMPTY
+     A*%%TS  SD  20240616  150058  SUBUKARU    REL-V7R4M0  5770-WDS
+     A                                      OVERLAY
+     A                                  9  5'No records to display'
+     A                                      COLOR(RED)

@@ -1,0 +1,37 @@
+
+**********************************************************************
+      * File Name       : CDCCMP (PF)
+      * Author          : Subu
+      * Date            : 02/11/2024
+      * Description     : Credit Card Master
+**********************************************************************
+
+                                            REF(CDCUSP)
+                R CDCCMPR
+                  CARDNUM       16  0       TEXT('CREDIT CARD NUMBER')
+                  CUSTID    R               TEXT('CUSTOMER ID')
+                  ACCTNUM   R               REFFLD(ACCTNUM CDACTP)
+                                            TEXT('ACCOUNT NUMBER')
+                  PRIMARYSEC     1A         TEXT('CC PRIMARY OR SECONDARY')
+                  NAME          25A         TEXT('NAME ON CC')
+                  EXPIRYMO       2P 0       TEXT('CC EXPIRY MONTH')
+                  EXPIRYYR       4P 0       TEXT('CC EXPIRY YEAR')
+                  CVV            3S 0       TEXT('CC CVV')
+                  STATUS         1A         TEXT('CC STATUS')
+                  CCMCRTDT  R               REFFLD(CUSCRTDT)
+                                            TEXT('CCM ADD DATE')
+                  CCMCRTTM  R               REFFLD(CUSCRTTM)
+                                            TEXT('CCM ADD TIME')
+                  CCMCRTUSR R               REFFLD(CUSCRTUSR)
+                                            TEXT('CCM ADD USER')
+                  CCMCRTPGM R               REFFLD(CUSCRTPGM)
+                                            TEXT('CCM ADD PROGRAM')
+                  CCMCHGDT  R               REFFLD(CCMCRTDT *SRC)
+                                            TEXT('CCM CHANGE DATE')
+                  CCMCHGTM  R               REFFLD(CCMCRTTM *SRC)
+                                            TEXT('CCM CHANGE TIME')
+                  CCMCHGUSR R               REFFLD(CCMCRTUSR *SRC)
+                                            TEXT('CCM CHANGE USER')
+                  CCMCHGPGM R               REFFLD(CCMCRTPGM *SRC)
+                                            TEXT('CCM CHANGE PROGRAM')
+
