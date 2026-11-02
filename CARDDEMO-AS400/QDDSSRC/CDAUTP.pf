@@ -1,0 +1,21 @@
+
+**********************************************************************
+      * File Name       : CDAUTP (PF)
+      * Author          : Subu
+      * Date            : 02/11/2024
+      * Description     : Authorization Master
+**********************************************************************
+
+     A          R CDAUTPR
+     A            AUTHID        18  0       TEXT('AUTHORIZATION ID')
+     A            TRNID         15  0       TEXT('TRANSACTION ID')
+     A            CARDNUM       16  0       TEXT('CREDIT CARD NUMBER')
+     A            RESPONSE       1A         TEXT('AUTH RESPONSE')
+     A            RSPREASON     30A         TEXT('AUTH RESP REASON')
+     A            FRAUDFLAG      1A         TEXT('FRAUD FLAG')
+     A            AUTHDATE        L         TEXT('AUTH DATE')
+     A            AUTHTIME        T         TEXT('AUTH TIME')
+     A            AUTHUSER      10          TEXT('AUTH USER')
+     A            AUTHPGM   R               REFFLD(AUTHUSER)
+     A                                      TEXT('AUTH PROGRAM')
+

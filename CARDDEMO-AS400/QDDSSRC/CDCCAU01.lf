@@ -1,0 +1,13 @@
+
+**********************************************************************
+      * File Name       : CDCCAU01 (LF)
+      * Author          : Subu
+      * Date            : 02/11/2024
+      * Description     : Credit Card Activity - Update Index
+**********************************************************************
+
+     A                                      UNIQUE
+     A          R CDCCAPR                   PFILE(CDCCAP)
+     A          K CARDNUM
+     A          K CCASEQNO
+

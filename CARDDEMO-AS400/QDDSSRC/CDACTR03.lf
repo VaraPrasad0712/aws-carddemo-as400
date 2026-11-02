@@ -1,0 +1,12 @@
+
+***********************************************************************
+      * File Name       : CDACTR03 (LF)
+      * Author          : Subu
+      * Date            : 06/01/2024
+      * Description     : Account Master - Key by Secondary Customer ID
+***********************************************************************
+
+     A
+     A          R CDACTPR                   PFILE(CDACTP)
+     A          K SECCUSTID
+

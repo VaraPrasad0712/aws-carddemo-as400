@@ -1,0 +1,13 @@
+
+************************************************************************
+      * File Name       : CDAUTR02 (LF)
+      * Author          : Subu
+      * Date            : 02/11/2024
+      * Description     : Authorization Master - Key by Tran and Auth ID
+************************************************************************
+
+     A
+     A          R CDAUTPR                   PFILE(CDAUTP)
+     A          K TRNID
+     A          K AUTHID
+

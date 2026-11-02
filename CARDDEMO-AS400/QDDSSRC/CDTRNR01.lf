@@ -1,0 +1,11 @@
+
+**********************************************************************
+      * File Name       : CDTRNR01 (LF)
+      * Author          : Subu
+      * Date            : 02/11/2024
+      * Description     : Transaction Master - Key by Transaction ID
+**********************************************************************
+
+     A          R CDTRNPR                   PFILE(CDTRNP)
+     A          K TRNID
+

@@ -1,0 +1,11 @@
+
+     A                                      UNIQUE
+     A          R CDSTAPR
+     A            STATECD        2A         TEXT('STATE CODE')
+     A            STATENM       30A         TEXT('STATE NAME')
+     A            COUNTRYCD      3A         TEXT('COUNTRY CODE')
+     A            COUNTRYNM      3A         TEXT('COUNTRY NAME')
+     A
+     A          K STATECD
+     A          K COUNTRYCD
+

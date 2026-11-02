@@ -1,0 +1,29 @@
+
+**********************************************************************
+      * File Name       : CDTRNP (PF)
+      * Author          : Subu
+      * Date            : 02/11/2024
+      * Description     : Transaction Master
+**********************************************************************
+
+     A          R CDTRNPR
+     A            TRNID         15  0       TEXT('TRANSACTION ID')
+     A            CARDNUM       16  0       TEXT('CREDIT CARD NUMBER')
+     A            TYPECD         2          TEXT('TYPE CODE')
+     A            CATEGCD        4          TEXT('CATEGORY CODE')
+     A            SOURCE         1A         TEXT('SOURCE')
+     A            DESS          30A         TEXT('DESCRIPTION')
+     A            AMOUNT        11S 2       TEXT('AMOUNT')
+     A            ORIGDATE        L         TEXT('ORIGINATION DATE')
+     A            PROCDATE        L         TEXT('PROCESS DATE')
+     A            MERCHID        9  0       TEXT('MERCHANT ID')
+     A            TRNSTATUS      1A         TEXT('TRANSACTION STATUS')
+     A            TRNCRTDT       7  0       TEXT('TRN ADD DATE')
+     A            TRNCRTTM       6  0       TEXT('TRN ADD TIME')
+     A            TRNCRTUSR     10A         TEXT('TRN ADD USER')
+     A            TRNCRTPGM     10A         TEXT('TRN ADD PROGRAM')
+     A            TRNCHGDT       7  0       TEXT('TRN CHANGE DATE')
+     A            TRNCHGTM       6  0       TEXT('TRN CHANGE TIME')
+     A            TRNCHGUSR     10A         TEXT('TRN CHANGE USER')
+     A            TRNCHGPGM     10A         TEXT('TRN CHANGE PROGRAM')
+

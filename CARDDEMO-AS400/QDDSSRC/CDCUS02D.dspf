@@ -1,0 +1,236 @@
+     A*%%TS  SD  20240701  182021  SUBU        REL-V7R4M0  5770-WDS
+     A*%%EC
+     A                                      DSPSIZ(24 80 *DS3)
+     A                                      INDARA
+     A                                      CF01(01)
+     A                                      CF02(02)
+     A                                      CF03(03)
+     A                                      CF04(04)
+     A                                      CF05(05)
+     A                                      CF06(06)
+     A                                      CF07(07)
+     A                                      CF08(08)
+     A                                      CF09(09)
+     A                                      CF10(10)
+     A                                      CF11(11)
+     A                                      CF12(12)
+     A                                      CF13(13)
+     A                                      CF14(14)
+     A                                      CF15(15)
+     A                                      CF16(16)
+     A                                      CF17(17)
+     A                                      CF18(18)
+     A                                      CF19(19)
+     A                                      CF20(20)
+     A                                      CF21(21)
+     A                                      CF22(22)
+     A                                      CF23(23)
+     A                                      CF24(24)
+     A                                      VLDCMDKEY(50)
+     A*-----------------------------------------------------------------------
+     A          R SCRN1
+     A*%%TS  SD  20240601  173409  SUBUKARU    REL-V7R4M0  5770-WDS
+     A                                      OVERLAY
+     A                                      RTNCSRLOC(&CSRREC &CSRFLD &CSRPOS)
+     A            CSRREC        10A  H
+     A            CSRFLD        10A  H
+     A            CSRPOS         4S 0H
+     A                                  1 35'AWS CardDemo'
+     A                                      COLOR(WHT)
+     A  80                              2 34'View Customer'
+     A                                      DSPATR(RI)
+     A  70                              2 35'Add Customer'
+     A                                      DSPATR(RI)
+     A N80N70                           2 34'Update Customer'
+     A                                      DSPATR(RI)
+     A                                  1 72DATE
+     A                                      EDTCDE(Y)
+     A                                  2 72TIME
+     A                                      EDTWRD('0  :  :  ')
+     A                                  1  2USER
+     A            PGMNAME       10A  O  2  2COLOR(BLU)
+     A                                 22  2'F3=Exit'
+     A                                      COLOR(BLU)
+     A                                 22 11'F12=Cancel'
+     A                                      COLOR(BLU)
+     A                                  4  4'Customer ID :'
+     A            CUSTID         9A  B  4 19COLOR(WHT)
+     A N70                                  DSPATR(PR)
+     A  70                                  DSPATR(UL)
+     A  81                                  DSPATR(PC)
+     A  81                                  DSPATR(RI)
+     A                                  6  4'SSN         :'
+     A            SSN            9A  B  6 19COLOR(WHT)
+     A  80                                  DSPATR(PR)
+     A N80                                  DSPATR(UL)
+     A  82                                  DSPATR(PC)
+     A  82                                  DSPATR(RI)
+     A                                  6 37'FICO Score :'
+     A            FICOSCORE      3A  B  6 51COLOR(WHT)
+     A  80                                  DSPATR(PR)
+     A N80                                  DSPATR(UL)
+     A  84                                  DSPATR(PC)
+     A  84                                  DSPATR(RI)
+     A                                  7  4'Birthday    :'
+     A  80N70     DOB           10A  O  7 19COLOR(WHT)
+     A            BIRTHYR        4A  B  7 19COLOR(WHT)
+     A  80                                  DSPATR(PR)
+     A N80                                  DSPATR(UL)
+     A  83                                  DSPATR(PC)
+     A  83                                  DSPATR(RI)
+     A            BIRTHMO        2A  B  7 24COLOR(WHT)
+     A  80                                  DSPATR(PR)
+     A N80                                  DSPATR(UL)
+     A  83                                  DSPATR(PC)
+     A  83                                  DSPATR(RI)
+     A            BIRTHDAY       2A  B  7 27COLOR(WHT)
+     A  80                                  DSPATR(PR)
+     A N80                                  DSPATR(UL)
+     A  83                                  DSPATR(PC)
+     A  83                                  DSPATR(RI)
+     A                                  7 37'Gender :'
+     A            GENDER         1A  B  7 46
+     A N70                                  DSPATR(PR) COLOR(WHT)
+     A  70                                  DSPATR(UL) COLOR(PNK)
+     A  95                                  DSPATR(PC)
+     A  95                                  DSPATR(RI)
+     A                                  9  4'First Name  :'
+     A            FIRSTNAME     25A  B  9 19COLOR(WHT)
+     A  80                                  DSPATR(PR)
+     A N80                                  DSPATR(UL)
+     A  85                                  DSPATR(PC)
+     A  85                                  DSPATR(RI)
+     A                                 10  4'Middle Name :'
+     A            MIDDLENAME    25A  B 10 19COLOR(WHT)
+     A  80                                  DSPATR(PR)
+     A N80                                  DSPATR(UL)
+     A                                 11  4'Last Name   :'
+     A            LASTNAME      25A  B 11 19COLOR(WHT)
+     A  80                                  DSPATR(PR)
+     A N80                                  DSPATR(UL)
+     A  86                                  DSPATR(PC)
+     A  86                                  DSPATR(RI)
+     A                                 13  4'Address 1   :'
+     A            ADDRESS1      40A  B 13 19COLOR(WHT)
+     A  80                                  DSPATR(PR)
+     A N80                                  DSPATR(UL)
+     A  87                                  DSPATR(PC)
+     A  87                                  DSPATR(RI)
+     A                                 14  4'Address 2   :'
+     A            ADDRESS2      40A  B 14 19COLOR(WHT)
+     A  80                                  DSPATR(PR)
+     A N80                                  DSPATR(UL)
+     A                                 15  4'City        :'
+     A            CITY          20A  B 15 19COLOR(WHT)
+     A  80                                  DSPATR(PR)
+     A N80                                  DSPATR(UL)
+     A  88                                  DSPATR(PC)
+     A  88                                  DSPATR(RI)
+     A                                 16  4'State       :'
+     A            STATE          2A  B 16 19COLOR(WHT)
+     A  80                                  DSPATR(PR)
+     A N80                                  DSPATR(UL)
+     A  89                                  DSPATR(PC)
+     A  89                                  DSPATR(RI)
+     A                                 16 39'ZIP :'
+     A            ZIP            5A  B 16 46COLOR(WHT)
+     A  80                                  DSPATR(PR)
+     A N80                                  DSPATR(UL)
+     A  90                                  DSPATR(PC)
+     A  90                                  DSPATR(RI)
+     A                                 16 59'Country :'
+     A            COUNTRY        3A  B 16 70COLOR(WHT)
+     A  80                                  DSPATR(PR)
+     A N80                                  DSPATR(UL)
+     A  91                                  DSPATR(PC)
+     A  91                                  DSPATR(RI)
+     A                                 17  4'Phone 1     :'
+     A            PHONE1AREA     3A  B 17 19COLOR(WHT)
+     A  80                                  DSPATR(PR)
+     A N80                                  DSPATR(UL)
+     A  92                                  DSPATR(PC)
+     A  92                                  DSPATR(RI)
+     A            PHONE1F3       3A  B 17 23COLOR(WHT)
+     A  80                                  DSPATR(PR)
+     A N80                                  DSPATR(UL)
+     A  92                                  DSPATR(PC)
+     A  92                                  DSPATR(RI)
+     A            PHONE1L4       4A  B 17 27COLOR(WHT)
+     A  80                                  DSPATR(PR)
+     A N80                                  DSPATR(UL)
+     A  92                                  DSPATR(PC)
+     A  92                                  DSPATR(RI)
+     A                                 17 39'Phone 2 :'
+     A            PHONE2AREA     3A  B 17 50COLOR(WHT)
+     A  80                                  DSPATR(PR)
+     A N80                                  DSPATR(UL)
+     A  93                                  DSPATR(PC)
+     A  93                                  DSPATR(RI)
+     A            PHONE2F3       3A  B 17 54COLOR(WHT)
+     A  80                                  DSPATR(PR)
+     A N80                                  DSPATR(UL)
+     A  93                                  DSPATR(PC)
+     A  93                                  DSPATR(RI)
+     A            PHONE2L4       4A  B 17 58COLOR(WHT)
+     A  80                                  DSPATR(PR)
+     A N80                                  DSPATR(UL)
+     A  93                                  DSPATR(PC)
+     A  93                                  DSPATR(RI)
+     A N70                             19  4'Created By:'
+     A N70        CUSCRTUSR     10A  O 19 16COLOR(WHT)
+     A N70                             19 29'On:'
+     A N70        CUSCRTDT       8Y 0O 19 33EDTWRD('    -  -  ')
+     A                                      COLOR(WHT)
+     A N70        CUSCRTTM       6Y 0O 19 44EDTWRD('0  :  :  ')
+     A                                      COLOR(WHT)
+     A N70                             19 55'Program:'
+     A N70        CUSCRTPGM     10A  O 19 64COLOR(WHT)
+     A N70                             20  4'Updated By:'
+     A N70        CUSCHGUSR     10A  O 20 16COLOR(WHT)
+     A N70                             20 29'On:'
+     A N70        CUSCHGDT       8Y 0O 20 33EDTWRD('    -  -  ')
+     A                                      COLOR(WHT)
+     A N70N94     CUSCHGTM       6Y 0O 20 44EDTWRD('0  :  :  ')
+     A                                      COLOR(WHT)
+     A N70                             20 55'Program:'
+     A N70        CUSCHGPGM     10A  O 20 64COLOR(WHT)
+     A* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+     A          R ADDWIN
+     A*%%TS  SD  20240601  150124  SUBU        REL-V7R4M0  5770-WDS
+     A                                      WINDOW(5 45 9 20)
+     A                                      WDWBORDER((*COLOR BLU) (*DSPATR RI))
+     A  70                              2  2'Add Customer'
+     A                                      COLOR(WHT)
+     A N70                              2  2'Update Customer'
+     A                                      COLOR(WHT)
+     A                                  4  2'Are you sure?'
+     A                                  6  2'Enter = Confirm'
+     A                                      COLOR(BLU)
+     A                                  7  2'F12 = Cancel'
+     A                                      COLOR(BLU)
+     A* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+     A          R GENDERWIN
+     A*%%TS  SD  20240701  182021  SUBU        REL-V7R4M0  5770-WDS
+     A                                      WINDOW(8 37 6 38)
+     A                                  1  2'Select Gender'
+     A                                      COLOR(WHT)
+     A            SELGEN         2Y 0B  3  3SNGCHCFLD
+     A                                      CHOICE(1 '>Male')
+     A                                      CHOICE(2 '>Female')
+     A                                      CHOICE(3 '>Unspecified')
+     A                                      CHECK(ER)
+     A                                      COLOR(WHT)
+     A* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+     A          R MSGSFL                    SFL
+     A                                      SFLMSGRCD(24)
+     A            SFLMSGKEY                 SFLMSGKEY
+     A            PGMQ                      SFLPGMQ
+     A          R MSGSFLC                   SFLCTL(MSGSFL)
+     A                                      OVERLAY
+     A                                      SFLSIZ(15)
+     A                                      SFLPAG(1)
+     A N99                                  SFLEND(*PLUS)
+     A                                      SFLDSP
+     A                                      SFLDSPCTL
+     A                                      SFLINZ
+     A            PGMQ                      SFLPGMQ

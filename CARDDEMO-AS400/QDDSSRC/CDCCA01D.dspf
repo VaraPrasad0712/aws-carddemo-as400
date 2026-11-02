@@ -1,0 +1,58 @@
+     A*%%TS  SD  20240706  203752  SUBU        REL-V7R4M0  5770-WDS
+     A*%%EC
+     A                                      DSPSIZ(24 80 *DS3)
+     A                                      REF(*LIBL/CDCCAP)
+     A                                      INDARA
+     A* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+     A          R HEADER1
+     A*%%TS  SD  20240702  235245  SUBUKARU    REL-V7R4M0  5770-WDS
+     A                                  1 35'AWS CardDemo'
+     A                                      COLOR(WHT)
+     A                                  1 72DATE
+     A                                      EDTCDE(Y)
+     A                                  2 72TIME
+     A                                      EDTWRD('0  :  :  ')
+     A                                  2  2USER
+     A            PGMNAME       10A  O  1  2COLOR(BLU)
+     A                                  2 31'Card Activity History'
+     A                                      DSPATR(RI)
+     A                                  4  2'Card Number:'
+     A            CARDNUM   R        O  4 15COLOR(WHT)
+     A                                      EDTWRD('    -    -    -    ')
+     A                                  6  2'Activity' DSPATR(UL)
+     A                                      COLOR(BLU)
+     A                                  6 12'Description' DSPATR(UL)
+     A                                      COLOR(BLU)
+     A                                  6 39'User' DSPATR(UL)
+     A                                      COLOR(BLU)
+     A                                  6 51'Timestamp' DSPATR(UL)
+     A                                      COLOR(BLU)
+     A* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+     A          R SFL1                      SFL
+     A*%%TS  SD  20240706  203752  SUBU        REL-V7R4M0  5770-WDS
+     A            ACTIVITY  R        O  7  2
+     A            DESS      R        O  7 12
+     A            CCAUSER   R        O  7 39
+     A            CCATMSTAMPR        O  7 51
+     A* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+     A          R CTL1                      SFLCTL(SFL1)
+     A*%%TS  SD  20240703  000348  SUBUKARU    REL-V7R4M0  5770-WDS
+     A                                      CF03(03 'Exit')
+     A                                      CF12(12 'Previous')
+     A                                      OVERLAY
+     A  30                                  SFLDSP
+     A  31                                  SFLDSPCTL
+     A  32                                  SFLCLR
+     A  33                                  SFLEND
+     A                                      SFLSIZ(9999)
+     A                                      SFLPAG(0013)
+     A* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+     A          R FOOTER
+     A                                      OVERLAY
+     A                                 21  2'-----------------------------------
+     A                                      ------------------------------------
+     A                                      ---------'
+     A                                      COLOR(WHT)
+     A                                 22  2'Enter=Top' COLOR(BLU)
+     A                                 22 13'F3=Exit' COLOR(BLU)
+     A                                 22 22'F12=Cancel' COLOR(BLU)

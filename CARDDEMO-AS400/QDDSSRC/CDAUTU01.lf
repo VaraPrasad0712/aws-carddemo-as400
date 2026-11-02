@@ -1,0 +1,12 @@
+
+**********************************************************************
+      * File Name       : CDAUTU01 (LF)
+      * Author          : Subu
+      * Date            : 02/11/2024
+      * Description     : Authorization Master - Update Index
+**********************************************************************
+
+     A                                      UNIQUE
+     A          R CDAUTPR                   PFILE(CDAUTP)
+     A          K AUTHID
+

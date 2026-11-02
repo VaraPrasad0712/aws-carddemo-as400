@@ -1,0 +1,49 @@
+     A* Free Form Menu: CARDMENU
+     A*%%TS  SD  20240602  192015  SUBU        REL-V7R4M0  5770-WDS
+     A*%%EC
+     A                                      DSPSIZ(24 80 *DS3                  -
+     A                                             27 132 *DS4)
+     A                                      CHGINPDFT
+     A                                      INDARA
+     A                                      PRINT(*LIBL/QSYSPRT)
+     A          R CARDMENU
+     A*%%TS  SD  20240601  092039  SUBU        REL-V7R4M0  5770-WDS
+     A                                      DSPMOD(*DS3)
+     A                                      LOCK
+     A                                      SLNO(01)
+     A                                      CLRL(*ALL)
+     A                                      CF03
+     A                                  1  2'CARDMENU'
+     A                                      COLOR(BLU)
+     A                                  2 31'AWS CardDemo Menu'
+     A                                      COLOR(WHT)
+     A                                  4  2'Select one of the following:'
+     A                                      COLOR(BLU)
+     A* CMDPROMPT  Do not delete this DDS spec.
+     A                                019  2'    Selection:'
+     A                                 17  6'90.'
+     A                                 17 10'Sign'
+     A                                 17 15'Off'
+     A                                  6  7'1.'
+     A                                  6 10'Customer'
+     A                                  7  7'2.'
+     A                                  7 10'Account'
+     A                                  8  7'3.'
+     A                                  8 10'Credit Card'
+     A                                  9  7'4.'
+     A                                  9 10'Transaction'
+     A                                 10  7'5.'
+     A                                 10 10'Authorization'
+     A                                  1 26'AWS'
+     A                                      COLOR(YLW)
+     A                                  1 30'Mainframe'
+     A                                      COLOR(YLW)
+     A                                  1 40'Modernization'
+     A                                      COLOR(YLW)
+     A                                  2  2USER
+     A                                  1 72DATE
+     A                                      EDTCDE(Y)
+     A                                  2 72TIME
+     A                                      EDTWRD('0  :  :  ')
+     A            CMDPROMPT      5A  B 20 10COLOR(WHT)
+     A                                      DSPATR(UL)

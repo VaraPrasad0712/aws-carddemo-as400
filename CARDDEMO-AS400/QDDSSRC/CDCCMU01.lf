@@ -1,0 +1,12 @@
+
+**********************************************************************
+      * File Name       : CDCCMU01 (LF)
+      * Author          : Subu
+      * Date            : 02/11/2024
+      * Description     : Credit Card Master - Update Index
+**********************************************************************
+
+     A                                      UNIQUE
+     A          R CDCCMPR                   PFILE(CDCCMP)
+     A          K CARDNUM
+     A

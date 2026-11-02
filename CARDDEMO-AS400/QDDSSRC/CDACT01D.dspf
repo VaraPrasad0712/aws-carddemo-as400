@@ -1,0 +1,212 @@
+     A*%%TS  SD  20240706  124918  SUBUKARU    REL-V7R4M0  5770-WDS
+     A*%%EC
+     A                                      DSPSIZ(24 80 *DS3)
+     A                                      INDARA
+     A                                      CF01(01)
+     A                                      CF02(02)
+     A                                      CA03(03)
+     A                                      CF04(04)
+     A                                      CF05(05)
+     A                                      CF06(06)
+     A                                      CF07(07)
+     A                                      CF08(08)
+     A N95                                  CF09(09)
+     A                                      CF10(10)
+     A                                      CF11(11)
+     A                                      CF12(12)
+     A                                      CF13(13)
+     A                                      CF14(14)
+     A                                      CF15(15)
+     A                                      CF16(16)
+     A                                      CF17(17)
+     A                                      CF18(18)
+     A                                      CF19(19)
+     A                                      CF20(20)
+     A                                      CF21(21)
+     A                                      CF22(22)
+     A                                      CF23(23)
+     A                                      CF24(24)
+     A                                      VLDCMDKEY(50)
+     A* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+     A          R HEADER1
+     A*%%TS  SD  20240608  215406  SUBUKARU    REL-V7R4M0  5770-WDS
+     A                                      OVERLAY
+     A                                  1 35'AWS Card Demo'
+     A                                      COLOR(WHT)
+     A                                  2 32'Account Main Screen'
+     A                                      DSPATR(RI)
+     A                                  1 72DATE
+     A                                      EDTCDE(Y)
+     A                                  2 72TIME
+     A                                      EDTWRD('0  :  :  ')
+     A                                  2  2USER
+     A            PGMNAME       10A  O  1  2COLOR(BLU)
+     A* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+     A          R HEADER2
+     A                                      OVERLAY
+     A                                  4  2'Select Options:'
+     A                                      COLOR(BLU)
+     A                                  4 19'2=Edit'
+     A                                      COLOR(BLU)
+     A                                  4 27'4=Inactivate'
+     A                                      COLOR(BLU)
+     A                                  4 41'5=Display'
+     A                                      COLOR(BLU)
+     A                                  7  2'?'
+     A                                      DSPATR(UL)
+     A                                      COLOR(BLU)
+     A                                  7  5'Account ID'
+     A                                      DSPATR(UL)
+     A                                      COLOR(BLU)
+     A                                  7 18'Open Date'
+     A                                      DSPATR(UL)
+     A                                      COLOR(BLU)
+     A                                  7 29'Primary Cust'
+     A                                      DSPATR(UL)
+     A                                      COLOR(BLU)
+     A                                  7 42'Secondary Cust'
+     A                                      DSPATR(UL)
+     A                                      COLOR(BLU)
+     A                                  7 57'Balance'
+     A                                      DSPATR(UL)
+     A                                      COLOR(BLU)
+     A            POSITION      12A  B  5  5COLOR(WHT)
+     A  81                                  DSPATR(PC)
+     A  81                                  DSPATR(RI)
+     A                                  7 73'Sts'
+     A                                      DSPATR(UL)
+     A                                      COLOR(BLU)
+     A* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+     A          R SFL1                      SFL
+     A*%%TS  SD  20240706  124918  SUBUKARU    REL-V7R4M0  5770-WDS
+     A            OPTION         1A  B  8  2VALUES('2' '4' '5')
+     A                                      CHKMSGID(ERR0001 *LIBL/CDMSGF01)
+     A                                      CHECK(AB)
+     A  34                                  DSPATR(RI)
+     A  34                                  COLOR(WHT)
+     A            SFLACCT       12A  O  8  5
+     A            OPENDATE      10L  O  8 18
+     A            SFLPCUST       9A  O  8 29
+     A            SFLSCUST       9A  O  8 42
+     A            SFLBAL        15A  O  8 57
+     A  92                                  COLOR(RED)
+     A            SFLSTS         1A  O  8 74
+     A* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+     A          R CTL1                      SFLCTL(SFL1)
+     A*%%TS  SD  20240706  124918  SUBUKARU    REL-V7R4M0  5770-WDS
+     A                                      PAGEUP(26)
+     A                                      PAGEDOWN(25)
+     A                                      OVERLAY
+     A N30                                  SFLDSP
+     A N29                                  SFLDSPCTL
+     A  31                                  SFLINZ
+     A  30                                  SFLCLR
+     A  33                                  SFLEND
+     A                                      SFLSIZ(0013)
+     A                                      SFLPAG(0013)
+     A            SFLRRN         4S 0H      SFLRCDNBR
+     A* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+     A          R FOOTER
+     A*%%TS  SD  20240622  224803  SUBUKARU    REL-V7R4M0  5770-WDS
+     A                                      OVERLAY
+     A                                 21  2'-----------------------------------
+     A                                      ------------------------------------
+     A                                      --------'
+     A                                      COLOR(WHT)
+     A                                 22  2'F3=Exit'
+     A                                      COLOR(BLU)
+     A                                 22 11'F5=Refresh'
+     A                                      COLOR(BLU)
+     A                                 22 23'F6=Add'
+     A                                      COLOR(BLU)
+     A            VARYFT        35   O 22 31COLOR(BLU)
+     A* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+     A          R FILTERWIN
+     A*%%TS  SD  20240622  111127  SUBUKARU    REL-V7R4M0  5770-WDS
+     A                                      WINDOW(5 5 9 46)
+     A                                      WDWBORDER((*COLOR BLU) (*DSPATR RI))
+     A                                  2 17'Filter Option'
+     A                                      DSPATR(UL)
+     A                                      COLOR(WHT)
+     A                                  4  2'Primary Customer ID Contains:'
+     A            CUSTFLTR       9A  B  4 32COLOR(WHT)
+     A N90                                  DSPATR(PC)
+     A N90                                  DSPATR(RI)
+     A                                  7  2'Enter=Confirm'
+     A                                      COLOR(BLU)
+     A                                  7 20'F2=Reset'
+     A                                      COLOR(BLU)
+     A                                  7 33'F12=Cancel'
+     A                                      COLOR(BLU)
+     A N90                              8  2'Filter value must be numeric.'
+     A  91 90                           8  2'Enter Y or blank.'
+     A* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+     A          R DELWIN
+     A*%%TS  SD  20240608  222832  SUBUKARU    REL-V7R4M0  5770-WDS
+     A                                      WINDOW(4 2 15 74)
+     A                                      WDWBORDER((*COLOR BLU) (*DSPATR RI))
+     A                                  1 29'Inactivate Account'
+     A                                      COLOR(WHT)
+     A                                      DSPATR(RI)
+     A                                  3  5'Account ID:'
+     A            ACTID         12A  O  3 17COLOR(WHT)
+     A                                  5  5'Are you sure you want' COLOR(RED)
+     A                                  5 27'to inactivate this' COLOR(RED)
+     A                                  5 46'account?' COLOR(RED)
+     A                                  7  5'Enter = Confirm' COLOR(BLU)
+     A                                  7 25'F12 = Cancel' COLOR(BLU)
+     A          R DELERRWIN
+     A*%%TS  SD  20240623  091547  SUBUKARU    REL-V7R4M0  5770-WDS
+     A                                      WINDOW(4 2 15 74)
+     A                                      WDWBORDER((*COLOR RED) (*DSPATR RI))
+     A  32                              1 32'Edit Account'
+     A                                      COLOR(WHT)
+     A                                      DSPATR(RI)
+     A N32                              1 29'Inactivate Account'
+     A                                      COLOR(WHT)
+     A                                      DSPATR(RI)
+     A                                  3  5'Account ID:'
+     A            ACTID         12A  O  3 17COLOR(WHT)
+     A                                 12  5'Press any function key'
+     A                                      COLOR(BLU)
+     A                                 12 28'or enter to continue...'
+     A                                      COLOR(BLU)
+     A            ERRDELW       62A  O 10  5COLOR(RED)
+     A                                      DSPATR(BL)
+     A                                  5  5'Primary Cust ID   :'
+     A  40                                  DSPATR(ND)
+     A                                  7  5'Secondary Cust ID :'
+     A  40                                  DSPATR(ND)
+     A            DPRICUSTID    12A  O  5 25COLOR(WHT)
+     A  40                                  DSPATR(ND)
+     A            DSECCUSTID     9A  O  7 25COLOR(WHT)
+     A  40                                  DSPATR(ND)
+     A                                  5 40'Credit Card#:'
+     A  40                                  DSPATR(ND)
+     A            DPRICREDIT    16  0O  5 54COLOR(WHT)
+     A  40                                  DSPATR(ND)
+     A                                      EDTWRD('    -    -    -    ')
+     A                                  7 40'Credit Card#:'
+     A  40                                  DSPATR(ND)
+     A            DSECCREDIT    16  0O  7 54COLOR(WHT)
+     A  40                                  DSPATR(ND)
+     A                                      EDTWRD('    -    -    -    ')
+     A* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+     A          R MSGSFL                    SFL
+     A                                      SFLMSGRCD(24)
+     A            SFLMSGKEY                 SFLMSGKEY
+     A            PGMQ                      SFLPGMQ
+     A          R MSGSFLC                   SFLCTL(MSGSFL)
+     A                                      OVERLAY
+     A                                      SFLSIZ(1)
+     A                                      SFLPAG(1)
+     A                                      SFLDSP
+     A                                      SFLDSPCTL
+     A                                      SFLINZ
+     A            PGMQ                      SFLPGMQ
+     A* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+     A          R EMPTY
+     A*%%TS  SD  20240706  124918  SUBUKARU    REL-V7R4M0  5770-WDS
+     A                                      OVERLAY
+     A                                  9  5'No records to display'
+     A                                      COLOR(RED)

@@ -1,0 +1,178 @@
+     A*%%TS  SD  20240630  114346  SUBUKARU    REL-V7R4M0  5770-WDS
+     A*%%EC
+     A                                      DSPSIZ(24 80 *DS3)
+     A                                      INDARA
+     A  80N95                               CA02(02)
+     A N95                                  CA03(03)
+     A N95                                  CF04(04)
+     A N95                                  CF12(12)
+     A                                      VLDCMDKEY(50)
+     A*-----------------------------------------------------------------------
+     A          R SCRN1
+     A*%%TS  SD  20240630  114346  SUBUKARU    REL-V7R4M0  5770-WDS
+     A                                      OVERLAY
+     A                                      RTNCSRLOC(&CSRREC &CSRFLD &CSRPOS)
+     A            CSRREC        10A  H
+     A            CSRFLD        10A  H
+     A            CSRPOS         4S 0H
+     A                                  1 35'AWS Card Demo'
+     A                                      COLOR(WHT)
+     A N80                              2 33'View Transactions'
+     A                                      DSPATR(RI)
+     A  80                              2 32'Submit Transaction'
+     A                                      DSPATR(RI)
+     A                                  1 72DATE
+     A                                      EDTCDE(Y)
+     A                                  2 72TIME
+     A                                      EDTWRD('0  :  :  ')
+     A                                  1  2USER
+     A                                      COLOR(BLU)
+     A            PGMNAME       10A  O  2  2
+     A            FTRTEXT       35A  O 22  2COLOR(BLU)
+     A                                  4  4'Transaction ID :'
+     A            TRNID         15D 0B  4 22
+     A N80                                  DSPATR(PR)
+     A  80                                  DSPATR(UL)
+     A  81                                  DSPATR(PC)
+     A  81                                  DSPATR(RI)
+     A                                      COMP(GT 100000000000000)
+     A                                      CHECK(ME)
+     A                                      DSPATR(MDT)
+     A                                      COLOR(WHT)
+     A N80                              4 46'Status :'
+     A N80        STATUS         1A  O  4 55COLOR(TRQ)
+     A N80        STATUSDTL     20A  O  4 58COLOR(WHT)
+     A                                  5  4'Card Number    :'
+     A            CARDNUM       16Y 0B  5 22CHECK(MF)
+     A                                      EDTWRD('0    -    -    -    ')
+     A N80                                  DSPATR(PR)
+     A  80                                  DSPATR(UL)
+     A  82                                  DSPATR(PC)
+     A  82                                  DSPATR(RI)
+     A                                      COLOR(PNK)
+     A                                  7  4'Type Code      :'
+     A            TYPECD         2D  B  7 22
+     A N80                                  DSPATR(PR)
+     A  80                                  DSPATR(UL)
+     A                                      DSPATR(MDT)
+     A                                      CHKMSGID(ERR0035 *LIBL/CDMSGF01)
+     A                                      VALUES('01' '02')
+     A  65                                  DFTVAL('01')
+     A                                      COLOR(WHT)
+     A                                  7 29'Category Code :'
+     A            CATEGCD        4D  B  7 45
+     A N80                                  DSPATR(PR)
+     A  80                                  DSPATR(UL)
+     A  84                                  DSPATR(PC)
+     A  84                                  DSPATR(RI)
+     A                                      CHECK(RZ)
+     A                                      COLOR(WHT)
+     A                                  7 54'Source :'
+     A            SOURCE         1A  B  7 63DSPATR(MDT)
+     A                                      CHKMSGID(ERR0037 *LIBL/CDMSGF01)
+     A                                      VALUES('P' 'W' 'O')
+     A  65                                  DFTVAL('O')
+     A N80                                  DSPATR(PR)
+     A  80                                  DSPATR(UL)
+     A                                      COLOR(WHT)
+     A                                  9  4'Description    :'
+     A            DESS          30A  B  9 22CHECK(LC)
+     A N80                                  DSPATR(PR)
+     A  80                                  DSPATR(UL)
+     A  85                                  DSPATR(PC)
+     A  85                                  DSPATR(RI)
+     A                                      COLOR(WHT)
+     A                                 10  4'Amount         :'
+     A  80        AMOUNTEDT     12A  B 10 22DSPATR(UL)
+     A  83                                  DSPATR(PC)
+     A  83                                  DSPATR(RI)
+     A                                      COLOR(WHT)
+     A N80        AMOUNTDSP     13A  O 10 22COLOR(WHT)
+     A                                 12  4'Merchant ID    :'
+     A            MERCHID        9Y 0B 12 22
+     A N80                                  DSPATR(PR)
+     A  80                                  DSPATR(UL)
+     A  86                                  DSPATR(PC)
+     A  86                                  DSPATR(RI)
+     A                                      CHECK(RZ)
+     A                                      COLOR(WHT)
+     A            MERCHNAME     25A  O 12 34COLOR(WHT)
+     A                                 14  4'Trn Origination Date :'
+     A            ORIGDATE      10L  B 14 27
+     A N80                                  DSPATR(PR)
+     A  80                                  DSPATR(UL)
+     A  87                                  DSPATR(PC)
+     A  87                                  DSPATR(RI)
+     A                                      COLOR(WHT)
+     A                                 14 41'Trn Process Date :'
+     A            PROCDATE      10L  B 14 60
+     A N80                                  DSPATR(PR)
+     A  80                                  DSPATR(UL)
+     A  88                                  DSPATR(PC)
+     A  88                                  DSPATR(RI)
+     A                                      COLOR(WHT)
+     A N80                             16  4'Submitted By :'
+     A N80        USRA1         10A  O 16 19COLOR(WHT)
+     A N80                             16 32'On:'
+     A N80        DTEA1          8Y 0O 16 36EDTWRD('    -  -  ')
+     A                                      COLOR(WHT)
+     A N80        TMEA1          6Y 0O 16 47EDTWRD('0  :  :  ')
+     A                                      COLOR(WHT)
+     A N80                             16 58'Program:'
+     A N80        PGMA1         10A  O 16 67COLOR(WHT)
+     A N80                             17  4'Authorized By:'
+     A N80        USRA2         10A  O 17 19COLOR(WHT)
+     A N80                             17 32'On:'
+     A N80        DTEA2          8Y 0O 17 36EDTWRD('    -  -  ')
+     A                                      COLOR(WHT)
+     A N80        TMEA2          6Y 0O 17 47EDTWRD('0  :  :  ')
+     A                                      COLOR(WHT)
+     A N80                             17 58'Program:'
+     A N80        PGMA2         10A  O 17 67COLOR(WHT)
+     A  79                             19  4'Reversed By  :'
+     A  79        USRB1         10A  O 19 19COLOR(WHT)
+     A  79                             19 32'On:'
+     A  79        DTEB1          8Y 0O 19 36EDTWRD('    -  -  ')
+     A                                      COLOR(WHT)
+     A  79        TMEB1          6Y 0O 19 47EDTWRD('0  :  :  ')
+     A                                      COLOR(WHT)
+     A  79                             19 58'Program:'
+     A  79        PGMB1         10A  O 19 67COLOR(WHT)
+     A  79                             20  4'Authorized By:'
+     A  79        USRB2         10A  O 20 19COLOR(WHT)
+     A  79                             20 32'On:'
+     A  79        DTEB2          8Y 0O 20 36EDTWRD('    -  -  ')
+     A                                      COLOR(WHT)
+     A  79        TMEB2          6Y 0O 20 47EDTWRD('0  :  :  ')
+     A                                      COLOR(WHT)
+     A  79                             20 58'Program:'
+     A  79        PGMB2         10A  O 20 67COLOR(WHT)
+     A* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+     A          R ZCONFIRM
+     A*%%TS  SD  20240628  123609  SUBUKARU    REL-V7R4M0  5770-WDS
+     A                                      WINDOW(16 19 4 35)
+     A                                      WDWBORDER((*COLOR BLU) (*DSPATR RI))
+     A                                      OVERLAY
+     A                                      ALARM
+     A                                  2  2'Confirm Submission? (Y/N)'
+     A            YESNO          1A  B  2 29DSPATR(BL)
+     A                                      DSPATR(UL)
+     A                                      COLOR(WHT)
+     A                                      CHECK(ME)
+     A                                      CHECK(ER)
+     A                                      VALUES('Y' 'N')
+     A                                      CHKMSGID(ERR0048 CDMSGF01)
+     A* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+     A          R MSGSFL                    SFL
+     A                                      SFLMSGRCD(24)
+     A            SFLMSGKEY                 SFLMSGKEY
+     A            PGMQ                      SFLPGMQ
+     A          R MSGSFLC                   SFLCTL(MSGSFL)
+     A                                      OVERLAY
+     A                                      SFLSIZ(8)
+     A                                      SFLPAG(1)
+     A N97                                  SFLEND(*PLUS)
+     A                                      SFLDSP
+     A                                      SFLDSPCTL
+     A                                      SFLINZ
+     A            PGMQ                      SFLPGMQ

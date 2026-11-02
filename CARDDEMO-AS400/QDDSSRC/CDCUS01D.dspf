@@ -1,0 +1,141 @@
+     A*%%TS  SD  20240616  150058  SUBUKARU    REL-V7R4M0  5770-WDS
+     A*%%EC
+     A                                      DSPSIZ(24 80 *DS3)
+     A                                      INDARA
+     A                                      CF01(01)
+     A                                      CF02(02)
+     A                                      CA03(03)
+     A                                      CF04(04)
+     A                                      CF05(05)
+     A                                      CF06(06)
+     A                                      CF07(07)
+     A                                      CF08(08)
+     A                                      CF09(09)
+     A                                      CF10(10)
+     A                                      CF11(11)
+     A                                      CF12(12)
+     A                                      CF13(13)
+     A                                      CF14(14)
+     A                                      CF15(15)
+     A                                      CF16(16)
+     A                                      CF17(17)
+     A                                      CF18(18)
+     A                                      CF19(19)
+     A                                      CF20(20)
+     A                                      CF21(21)
+     A                                      CF22(22)
+     A                                      CF23(23)
+     A                                      CF24(24)
+     A                                      ROLLUP(25)
+     A                                      ROLLDOWN(26)
+     A                                      VLDCMDKEY(50)
+     A* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+     A          R HEADER1
+     A                                      KEEP
+     A                                  1 35'AWS CardDemo'
+     A                                      COLOR(WHT)
+     A                                  2 32'Customer Main Screen'
+     A                                      DSPATR(RI)
+     A                                  1 72DATE EDTCDE(Y)
+     A                                  2 72TIME EDTWRD('0  :  :  ')
+     A                                  2  2USER
+     A            PGMNAME       10A     1  2COLOR(BLU)
+     A* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+     A          R HEADER2
+     A                                      OVERLAY
+     A                                  4  2'Select Options:' COLOR(BLU)
+     A                                  4 19'2=Edit' COLOR(BLU)
+     A                                  4 27'4=Delete' COLOR(BLU)
+     A                                  4 37'5=Display' COLOR(BLU)
+     A                                  7  2'?' DSPATR(UL)
+     A                                      COLOR(BLU)
+     A                                  7  5'Customer ID' DSPATR(UL)
+     A                                      COLOR(BLU)
+     A                                  7 18'First Name' DSPATR(UL)
+     A                                      COLOR(BLU)
+     A                                  7 45'Last Name' DSPATR(UL)
+     A                                      COLOR(BLU)
+     A            POSITION       9A  B  5  5
+     A  81                                  DSPATR(RI)
+     A  81                                  DSPATR(PC)
+     A                                      COLOR(WHT)
+     A* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+     A          R SFL1                      SFL
+     A            OPTION         1A  B  8  2
+     A                                      VALUES('2' '4' '5')
+     A                                      CHKMSGID(ERR0001 CDMSGF01)
+     A                                      CHECK(AB)
+     A            CUSTID         9A     8  5
+     A            FIRSTNAME     25A     8 18
+     A            LASTNAME      25A     8 45
+     A* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+     A          R CTL1                      SFLCTL(SFL1)
+     A                                      OVERLAY
+     A                                      SFLPAG(13)
+     A                                      SFLSIZ(13)
+     A                                      SFLDSPCTL
+     A N30                                  SFLDSP
+     A  30                                  SFLCLR
+     A  31                                  SFLINZ
+     A  33                                  SFLEND
+     A                                      CSRLOC(ROW COL)
+     A            ROW            3S 0H
+     A            COL            3S 0H
+     A            SFLRRN         4S 0H      SFLRCDNBR(CURSOR)
+     A* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+     A          R FOOTER
+     A                                      OVERLAY
+     A                                 21  2'-----------------------------------
+     A                                      ------------------------------------
+     A                                      ---------'
+     A                                      COLOR(WHT)
+     A                                 22  2'F3=Exit' COLOR(BLU)
+     A                                 22 11'F5=Refresh' COLOR(BLU)
+     A                                 22 23'F6=Add' COLOR(BLU)
+     A                                 22 31'F12=Cancel' COLOR(BLU)
+     A* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+     A          R DELWIN
+     A                                      WINDOW(4 2 15 74)
+     A                                      WDWBORDER((*COLOR BLU) (*DSPATR RI))
+     A                                  1 31'Delete Customer' COLOR(WHT)
+     A                                       DSPATR(RI)
+     A                                  3  5'Customer ID:'
+     A            CUSTID         9A  O  3 18 COLOR(WHT)
+     A                                  5  5'Are you sure you want' COLOR(RED)
+     A                                  5 27'to delete this' COLOR(RED)
+     A                                  5 42'customer?' COLOR(RED)
+     A                                  7  5'Enter = Confirm' COLOR(BLU)
+     A                                  7 25'F12 = Cancel' COLOR(BLU)
+     A* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+     A          R DELERRWIN
+     A                                      WINDOW(4 2 15 74)
+     A                                      WDWBORDER((*COLOR RED) (*DSPATR RI))
+     A                                  1 31'Delete Customer' COLOR(WHT)
+     A                                       DSPATR(RI)
+     A                                  3  5'Customer ID:'
+     A            CUSTID         9A  O  3 18 COLOR(WHT)
+     A                                  3 39'Account ID:'
+     A            ACTID         12   O  3 51 COLOR(WHT)
+     A                                  7  5'Press any function key' COLOR(BLU)
+     A                                  7 28'or enter to continue...' COLOR(BLU)
+     A            ERRDELW       50A  O  5  5 MSGID(ERR0064 CDMSGF01)
+     A                                       COLOR(RED) DSPATR(BL)
+     A* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+     A          R MSGSFL                    SFL
+     A                                      SFLMSGRCD(24)
+     A            SFLMSGKEY                 SFLMSGKEY
+     A            PGMQ                      SFLPGMQ
+     A          R MSGSFLC                   SFLCTL(MSGSFL)
+     A                                      OVERLAY
+     A                                      SFLSIZ(1)
+     A                                      SFLPAG(1)
+     A                                      SFLDSP
+     A                                      SFLDSPCTL
+     A                                      SFLINZ
+     A            PGMQ                      SFLPGMQ
+     A* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+     A          R EMPTY
+     A*%%TS  SD  20240616  150058  SUBUKARU    REL-V7R4M0  5770-WDS
+     A                                      OVERLAY
+     A                                  9  5'No records to display'
+     A                                      COLOR(RED)

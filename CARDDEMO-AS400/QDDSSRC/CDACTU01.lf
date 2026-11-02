@@ -1,0 +1,12 @@
+
+**********************************************************************
+      * File Name       : CDACTU01 (LF)
+      * Author          : Subu
+      * Date            : 02/11/2024
+      * Description     : Account Master - Update Index
+**********************************************************************
+
+     A                                      UNIQUE
+     A          R CDACTPR                   PFILE(CDACTP)
+     A          K ACCTNUM
+

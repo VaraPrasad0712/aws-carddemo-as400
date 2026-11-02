@@ -1,0 +1,36 @@
+
+**********************************************************************
+      * File Name       : CDCUSP (PF)
+      * Author          : Subu
+      * Date            : 02/11/2024
+      * Description     : Customer Master
+**********************************************************************
+
+     A          R CDCUSPR
+     A            CUSTID         9  0       TEXT('CUSTOMER ID')
+     A            SSN            9  0       TEXT('SOCIAL SECURITY NUMBER')
+     A            BIRTHDAY       2  0       TEXT('BIRTH DAY')
+     A            BIRTHMO        2  0       TEXT('BIRTH MONTH')
+     A            BIRTHYR        4  0       TEXT('BIRTH YEAR')
+     A            GENDER         1A         TEXT('GENDER')
+     A            FICOSCORE      3  0       TEXT('FICO SCORE')
+     A            FIRSTNAME     25A         TEXT('FIRST NAME')
+     A            MIDNAME       25A         TEXT('MIDDLE NAME')
+     A            LASTNAME      25A         TEXT('LAST NAME')
+     A            ADDRESS1      40A         TEXT('ADDRESS LINE 1')
+     A            ADDRESS2      40A         TEXT('ADDRESS LINE 2')
+     A            CITY          20A         TEXT('CITY')
+     A            STATE          2A         TEXT('STATE')
+     A            ZIP            5  0       TEXT('ZIP CODE')
+     A            COUNTRY        3A         TEXT('COUNTRY')
+     A            PHONE1        10  0       TEXT('PHONE NUMBER 1')
+     A            PHONE2        10  0       TEXT('PHONE NUMBER 2')
+     A            CUSCRTDT       7  0       TEXT('CUS ADD DATE')
+     A            CUSCRTTM       6  0       TEXT('CUS ADD TIME')
+     A            CUSCRTUSR     10A         TEXT('CUS ADD USER')
+     A            CUSCRTPGM     10A         TEXT('CUS ADD PROGRAM')
+     A            CUSCHGDT       7  0       TEXT('CUS CHANGE DATE')
+     A            CUSCHGTM       6  0       TEXT('CUS CHANGE TIME')
+     A            CUSCHGUSR     10A         TEXT('CUS CHANGE USER')
+     A            CUSCHGPGM     10A         TEXT('CUS CHANGE PROGRAM')
+

@@ -1,0 +1,15 @@
+
+**************************************************************************
+      * File Name       : CDTRNR02 (LF)
+      * Author          : Subu
+      * Date            : 05/31/2024
+      * Description     : Transaction Master - Key by Status/Chg Dt/Chg Tm
+**************************************************************************
+
+     A          R CDTRNPR                   PFILE(CDTRNP)
+     A          K TRNSTATUS                 DESCEND
+     A          K TRNCHGDT
+     A          K TRNCHGTM
+     A          K TRNID
+     A          S TRNSTATUS                 VALUES('a' 's')
+

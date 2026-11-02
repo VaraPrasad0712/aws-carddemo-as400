@@ -1,0 +1,12 @@
+
+**********************************************************************
+      * File Name       : CDTRNR01 (LF)
+      * Author          : Subu
+      * Date            : 02/11/2024
+      * Description     : Transaction Master - Update Index
+**********************************************************************
+
+     A                                      UNIQUE
+     A          R CDTRNPR                   PFILE(CDTRNP)
+     A          K TRNID
+

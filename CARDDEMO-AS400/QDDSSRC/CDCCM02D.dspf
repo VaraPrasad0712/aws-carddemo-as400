@@ -1,0 +1,123 @@
+     A*%%TS  SD  20240616  150209  SUBUKARU    REL-V7R4M0  5770-WDS
+     A*%%EC
+     A                                      DSPSIZ(24 80 *DS3)
+     A                                      INDARA
+     A                                      CF02(02)
+     A                                      CF03(03)
+     A                                      CF04(04)
+     A                                      CF09(09)
+     A                                      CF12(12)
+     A                                      VLDCMDKEY(50)
+     A*-----------------------------------------------------------------------
+     A          R SCRN1
+     A*%%TS  SD  20240616  150209  SUBUKARU    REL-V7R4M0  5770-WDS
+     A                                      OVERLAY
+     A                                      RTNCSRLOC(&CSRREC &CSRFLD &CSRPOS)
+     A            CSRREC        10A  H
+     A            CSRFLD        10A  H
+     A            CSRPOS         4S 0H
+     A                                  1 35'AWS CardDemo'
+     A                                      COLOR(WHT)
+     A  71                              2 33'View Credit Card'
+     A                                      DSPATR(RI)
+     A  70                              2 32'Create Credit Card'
+     A                                      DSPATR(RI)
+     A N70N71                           2 32'Update Credit Card'
+     A                                      DSPATR(RI)
+     A                                  1 72DATE
+     A                                      EDTCDE(Y)
+     A                                  2 72TIME
+     A                                      EDTWRD('0  :  :  ')
+     A                                  2  2USER
+     A            PGMNAME       10A  O  1  2COLOR(BLU)
+     A                                  5  4'Card Number . . . . . .'
+     A            CARDNUM       16  0O  5 29COLOR(WHT)
+     A                                      EDTWRD('    -    -    -    ')
+     A                                  6  4'Customer ID . . . . . .'
+     A            CUSTID         9A  B  6 29
+     A                                      COLOR(PNK)
+     A  61
+     AON70                                  DSPATR(PR)
+     A N61
+     AA 70                                  DSPATR(UL)
+     A  77                                  DSPATR(PC)
+     A  77                                  DSPATR(RI)
+     A                                  7  4'Account Number. . . . .'
+     A            ACCTNUM       12A  B  7 29
+     A                                      COLOR(PNK)
+     A  61
+     AON70                                  DSPATR(PR)
+     A N61
+     AA 70                                  DSPATR(UL)
+     A  78                                  DSPATR(PC)
+     A  78                                  DSPATR(RI)
+     A                                  9  4'Name on card. . . . . .'
+     A            NAME          25A  B  9 29COLOR(WHT)
+     A  70
+     AO 71                                  DSPATR(PR)
+     A N70N71                               DSPATR(UL)
+     A  79                                  DSPATR(PC)
+     A  79                                  DSPATR(RI)
+     A                                 10  4'Primary or Secondary. .'
+     A            PRIMARYSEC     1A  O 10 29COLOR(WHT)
+     A                                 12  4'Status. . . . . . . . .'
+     A            STATUS         1A  O 12 29COLOR(TRQ)
+     A            STATUSDESS    15A  O 12 32COLOR(WHT)
+     A                                 14  4'Expiry Date . . . . . .'
+     A            EXPIRYMO       2A  O 14 29COLOR(WHT)
+     A                                 14 32'/'
+     A            EXPIRYYR       4A  O 14 34COLOR(WHT)
+     A                                 15  4'CVV . . . . . . . . . . '
+     A            CVV            3A  O 15 29COLOR(WHT)
+     A N70                             18  4'Created By:'
+     A N70        CCMCRTUSR     10A  O 18 16COLOR(WHT)
+     A N70                             18 29'On:'
+     A N70        CCMCRTDT       8Y 0O 18 33EDTWRD('    -  -  ')
+     A                                      COLOR(WHT)
+     A N70        CCMCRTTM       6Y 0O 18 44EDTWRD('0  :  :  ')
+     A                                      COLOR(WHT)
+     A N70                             18 55'Program:'
+     A N70        CCMCRTPGM     10A  O 18 64COLOR(WHT)
+     A N70                             19  4'Updated By:'
+     A N70        CCMCHGUSR     10A  O 19 16COLOR(WHT)
+     A N70                             19 29'On:'
+     A N70        CCMCHGDT       8Y 0O 19 33EDTWRD('    -  -  ')
+     A                                      COLOR(WHT)
+     A N70N90     CCMCHGTM       6Y 0O 19 44EDTWRD('0  :  :  ')
+     A                                      COLOR(WHT)
+     A N70                             19 55'Program:'
+     A N70        CCMCHGPGM     10A  O 19 64COLOR(WHT)
+     A  71                             22  2'F3=Exit  F9=Card History'
+     A                                      COLOR(BLU)
+     A  71                             22 28'F12=Cancel'
+     A                                      COLOR(BLU)
+     A  70                             22  2'F2=Clear'
+     A                                      COLOR(BLU)
+     A  70                             22 12'F3=Exit  F12=Cancel'
+     A                                      COLOR(BLU)
+     A N70N71                          22  2'F3=Exit  F9=Card History'
+     A                                      COLOR(BLU)
+     A N70N71                          22 28'F12=Cancel'
+     A                                      COLOR(BLU)
+     A* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+     A          R CONFIRM
+     A                                      WINDOW(5 45 9 20)
+     A                                      WDWBORDER((*COLOR BLU) (*DSPATR RI))
+     A  70                              2  2'Create Credit Card' COLOR(WHT)
+     A N70                              2  2'Update Credit Card' COLOR(WHT)
+     A                                  4  2'Are you sure?'
+     A                                  6  2'Enter = Confirm' COLOR(BLU)
+     A                                  7  2'F12 = Cancel' COLOR(BLU)
+     A* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+     A          R MSGSFL                    SFL
+     A                                      SFLMSGRCD(24)
+     A            SFLMSGKEY                 SFLMSGKEY
+     A            PGMQ                      SFLPGMQ
+     A          R MSGSFLC                   SFLCTL(MSGSFL)
+     A                                      OVERLAY
+     A                                      SFLSIZ(1)
+     A                                      SFLPAG(1)
+     A                                      SFLDSP
+     A                                      SFLDSPCTL
+     A                                      SFLINZ
+     A            PGMQ                      SFLPGMQ
